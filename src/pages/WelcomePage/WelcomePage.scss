@@ -1,0 +1,21 @@
+@import "../../scss/vars.scss";
+
+.welcome {
+  .welcome__wrapp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    color: $textColor;
+    background-color: $bgColor;
+  }
+  .welcome__buttons {
+    margin-bottom: 2rem;
+  }
+  .welcome__btn + .welcome__btn {
+    margin-left: 1rem;
+  }
+}

@@ -1,0 +1,57 @@
+@use "sass:color";
+@import "../../scss/vars.scss";
+
+.chatModal {
+  position: fixed;
+  z-index: 2000;
+  .chatModall__backplate {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+  }
+  .chatModal__wrapp {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: $mainOffset;
+    left: 50%;
+    top: 50%;
+    background-color: $bgColor;
+    transform: translate(-50%, -50%);
+  }
+
+  .chatModal__close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: -25px;
+    top: -25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    color: $primaryColor;
+    background-color: transparent;
+    transition: background 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba($color: $primaryColor, $alpha: 0.5);
+      filter: brightness(125%);
+    }
+  }
+
+  .chatmodal__input,
+  .chatmodal__select {
+    margin-bottom: $mainOffset;
+  }
+
+  .chatModal__submite {
+    margin-left: auto;
+  }
+}

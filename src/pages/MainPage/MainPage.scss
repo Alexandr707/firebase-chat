@@ -1,0 +1,110 @@
+@import "../../scss/_vars.scss";
+
+.mainPage {
+  color: $textColor;
+  background-color: $bgColor;
+  height: 100vh;
+  padding: $mainOffset;
+
+  .main__wrapp {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1000px;
+    height: 100%;
+    border: 2px solid $primaryColor;
+    border-radius: 10px;
+  }
+  .main__flex {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+  }
+  .main__menuIcon {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+  }
+  .main__chatList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-width: 320px;
+
+    @media (max-width: 600px) {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      transform: translateY(-150%);
+      transition: transform 0.3s;
+
+      &.open {
+        width: 100%;
+        max-width: 100%;
+        background-color: $bgColor;
+        transform: translateY(0);
+        z-index: 1989;
+      }
+    }
+  }
+  .main__chat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  .main__chat-title {
+    position: relative;
+    flex: 0 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+    height: 80px;
+    // overflow: hidden;
+    border-bottom: 2px solid $primaryColor;
+
+    h2 {
+      margin-bottom: 0;
+      width: 100%;
+      text-overflow: clip;
+
+      padding: 0 $mainOffset;
+      overflow: hidden;
+    }
+  }
+  .message__gear {
+    position: absolute;
+    right: 5px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    fill: $primaryColor;
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+    z-index: 1989;
+    &.clicked {
+      transform: rotate(60deg);
+    }
+  }
+  .main__messages {
+    position: relative;
+    // flex: 0 0 auto;
+    width: 100%;
+    height: calc(100% - 80px - 100px);
+  }
+  .main__chat-newMessage {
+    // flex: 0 0 auto;
+    width: 100%;
+    height: 100px;
+  }
+}

@@ -1,0 +1,149 @@
+@use "sass:color";
+@import "../../scss/_vars.scss";
+
+.messages {
+  position: relative;
+  height: 100%;
+
+  .messages__wrapp {
+    padding: $mainOffset;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .message:not(:first-child) {
+    margin-top: $mainOffset;
+  }
+
+  .message__content {
+    display: inline-block;
+    position: relative;
+    padding: $mainOffset;
+    min-width: 240px;
+    max-width: 100%;
+    border: 2px solid $primaryColor;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-overflow: clip;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 100%;
+      bottom: -2px;
+      width: 0;
+      height: 0;
+      border-right: 7px solid $primaryColor;
+      border-bottom: 7px solid $primaryColor;
+      border-top: 7px solid transparent;
+      border-left: 7px solid transparent;
+    }
+
+    &.currentUser {
+      border-color: $secondaryColor;
+      &::after {
+        border-bottom-color: $secondaryColor;
+        border-right-color: $secondaryColor;
+      }
+
+      .message__user {
+        color: $secondaryColor;
+      }
+    }
+  }
+  .message__text {
+    margin-bottom: 20px;
+
+    span {
+      margin-left: $mainOffset;
+      color: grey;
+      font-size: 0.8rem;
+    }
+  }
+  .message__user {
+    position: absolute;
+    left: $mainOffset;
+    bottom: calc($mainOffset / 2);
+    color: $primaryColor;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .message__time {
+    position: absolute;
+    right: $mainOffset;
+    bottom: calc($mainOffset / 2);
+    color: grey;
+    font-size: 0.6rem;
+  }
+  .messages__empty {
+    text-align: center;
+  }
+
+  .message__icons {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    svg:hover {
+      filter: brightness(140%);
+    }
+
+    & .msgEditIcon {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-bottom: calc($mainOffset / 4);
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      opacity: 1;
+      transition: opacity 0.3s;
+      cursor: pointer;
+    }
+
+    .message__editBtns {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+    }
+
+    svg {
+      stroke: $primaryColor;
+      fill: $primaryColor;
+    }
+
+    .message__delete,
+    .message__edit {
+      opacity: 0;
+    }
+    .message__dots.msgEditIcon {
+      // top: 10px;
+    }
+
+    &:hover {
+      .message__dots {
+        opacity: 0;
+      }
+      .message__delete,
+      .message__edit {
+        opacity: 1;
+      }
+    }
+  }
+
+  .currentUser .message__icons {
+    svg {
+      stroke: $secondaryColor;
+      fill: $secondaryColor;
+    }
+  }
+}

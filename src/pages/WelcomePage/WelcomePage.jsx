@@ -1,0 +1,44 @@
+import { useSelector } from "react-redux";
+import { Navigate, useNavigate } from "react-router-dom";
+import Button from "../../component/Button/Button";
+import Loader from "../../component/Loader/Loader";
+import vars from "../../Constants/vars";
+import "./WelcomePage.scss";
+
+function WelcomePage() {
+  const { status, userInfo } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
+  if (userInfo) return <Navigate to={"/"} />;
+
+  function redirrectToLogin() {
+    navigate("/login");
+  }
+
+  function redirrectToSignIn() {
+    navigate("/signin");
+  }
+
+  return (
+    <div className="welcome">
+      <div className="welcome__wrapp">
+        {status === vars.LOADING && <Loader />}
+        {status === vars.UNAUTHORIZED && (
+          <>
+            <div className="welcome__buttons">
+              <Button className="welcome__btn" onClick={redirrectToSignIn}>
+                Sign in
+              </Button>
+              <Button className="welcome__btn" onClick={redirrectToLogin}>
+                Login
+              </Button>
+            </div>
+            <div className="welcome__about">This app use firebase</div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default WelcomePage;

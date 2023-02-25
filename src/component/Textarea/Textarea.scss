@@ -1,0 +1,12 @@
+@use "sass:color";
+@import "../../scss/_vars.scss";
+
+textarea {
+  width: 100%;
+  min-height: 1.2rem;
+  padding: $mainOffset;
+  background-color: inherit;
+  border: 2px solid $primaryColor;
+  border-radius: 10px;
+  overflow: hidden;
+}

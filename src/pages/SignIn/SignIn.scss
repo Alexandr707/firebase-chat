@@ -1,0 +1,32 @@
+@import "../../scss/_vars.scss";
+
+.signin {
+  .signin__wrapp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    color: $textColor;
+    background-color: $bgColor;
+  }
+  .signin__email,
+  .signin__pass,
+  .signin__signBtn {
+    margin-top: $mainOffset;
+  }
+  h2,
+  p {
+    margin-bottom: $mainOffset;
+    color: grey;
+  }
+  input.error {
+    border-color: $warningColor;
+  }
+
+  button {
+    margin-top: $mainOffset;
+  }
+}

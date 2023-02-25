@@ -1,0 +1,48 @@
+@import "../../scss/_vars.scss";
+
+.menuIcon {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  z-index: 1990;
+  cursor: pointer;
+
+  .menuIcon__span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $primaryColor;
+    opacity: 1;
+    transform-origin: left;
+    transform: rotate(0);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .menuIcon__span:nth-child(1) {
+    top: 0;
+  }
+  .menuIcon__span:nth-child(2) {
+    top: 50%;
+  }
+  .menuIcon__span:nth-child(3) {
+    top: 100%;
+  }
+
+  &.open {
+    .menuIcon__span:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    .menuIcon__span:nth-child(2) {
+      opacity: 0;
+    }
+    .menuIcon__span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @media (max-width: 600px) {
+    display: block;
+  }
+}

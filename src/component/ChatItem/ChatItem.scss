@@ -1,0 +1,51 @@
+@use "sass:color";
+@import "../../scss/vars.scss";
+
+.chatItem {
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  position: relative;
+  padding: 10px 45px 10px 20px;
+  background-color: inherit;
+  transition: background 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color: $primaryColor, $alpha: 0.5);
+  }
+  &:active {
+    background-color: rgba($color: $primaryColor, $alpha: 0.7);
+  }
+
+  &.selected {
+    background-color: $primaryColor;
+    filter: brightness(90%);
+  }
+
+  .chatItem__btns {
+    display: flex;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .chatItem__remove,
+  .chatItem__edite {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    fill: $textColor;
+    opacity: 0.2;
+    transition: opacity 0.3s;
+  }
+
+  &:hover {
+    .chatItem__remove,
+    .chatItem__edite {
+      opacity: 1;
+    }
+  }
+}

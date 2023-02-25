@@ -1,0 +1,28 @@
+@import "../../scss/_vars.scss";
+
+.settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  .settings__container {
+    width: 320px;
+    background-color: $bgColor;
+
+    dl {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid grey;
+    }
+    dl + dl {
+      margin-top: $mainOffset;
+    }
+  }
+  .settings__btns button {
+    display: block;
+    margin-left: auto;
+    margin-top: $mainOffset;
+  }
+}

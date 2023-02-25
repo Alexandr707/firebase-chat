@@ -1,0 +1,23 @@
+@use "sass:color";
+@import "../../scss/vars.scss";
+
+.input {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 10px 15px;
+  background-color: $bgColor;
+  border: transparent;
+  outline: none;
+
+  border-bottom-color: $primaryColor;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  // border-bottom: 2px solid rgba($color: $primaryColor, $alpha: 0.4);
+
+  transition: border 0.3s;
+
+  &:focus {
+    // border-bottom-color: rgba($color: $primaryColor, $alpha: 1);
+    filter: brightness(150%);
+  }
+}
