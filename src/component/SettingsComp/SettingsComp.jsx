@@ -6,6 +6,7 @@ import { getColorSchema } from "../../utils/getColorSchema";
 import { setColorSchema } from "../../utils/setColorSchema";
 import Button from "../Button/Button";
 import DropDown from "../DropDown/DropDown";
+import { CloseIcon } from "../Icons";
 import "./SettingsComp.scss";
 
 function SettingsComp({ isOpen, close }) {
@@ -39,6 +40,9 @@ function SettingsComp({ isOpen, close }) {
     <DropDown isOpen={isOpen} close={close}>
       <div className="settings">
         <div className="settings__container">
+          <div className="settings__close" onClick={() => close()}>
+            <CloseIcon />
+          </div>
           {Boolean(preff) && (
             <>
               <dl>

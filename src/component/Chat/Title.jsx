@@ -33,12 +33,7 @@ function Title() {
           <GearIcon />
         </div>
       </div>
-      {isOptions && (
-        <SettingsComp
-          isOpen={isOptions}
-          close={() => setIsOptions(!isOptions)}
-        />
-      )}
+      <SettingsComp isOpen={isOptions} close={() => setIsOptions(!isOptions)} />
     </>
   );
 }

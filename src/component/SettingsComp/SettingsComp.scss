@@ -8,6 +8,7 @@
   height: 100%;
 
   .settings__container {
+    position: relative;
     width: 320px;
     background-color: $bgColor;
 
@@ -24,5 +25,18 @@
     display: block;
     margin-left: auto;
     margin-top: $mainOffset;
+  }
+
+  .settings__close {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+    fill: $primaryColor;
+    cursor: pointer;
+    &:hover svg {
+      filter: brightness(140%);
+    }
   }
 }
