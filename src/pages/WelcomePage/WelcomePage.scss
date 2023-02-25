@@ -18,4 +18,18 @@
   .welcome__btn + .welcome__btn {
     margin-left: 1rem;
   }
+  .welcome__about {
+    position: relative;
+    left: 40px;
+    max-width: 500px;
+    padding: $mainOffset;
+
+    ul {
+      padding-left: calc($mainOffset * 2);
+    }
+    li {
+      padding-left: 0;
+      margin-left: 0;
+    }
+  }
 }

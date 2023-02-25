@@ -33,7 +33,17 @@ function WelcomePage() {
                 Login
               </Button>
             </div>
-            <div className="welcome__about">This app use firebase</div>
+            <div className="welcome__about">
+              <h3>Возможности чата:</h3>
+              <ul>
+                <li>Владелец чата может назначить модереаторов.</li>
+                <li>Можно кастомизировать цветовую палитру чата.</li>
+              </ul>
+              <p>Чат использует firebase как хранилище.</p>
+              <p>
+                Стек: <b>React</b> <b>Redux</b> <b>Scss</b>
+              </p>
+            </div>
           </>
         )}
       </div>
