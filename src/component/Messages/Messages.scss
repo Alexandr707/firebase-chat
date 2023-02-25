@@ -56,6 +56,7 @@
   }
   .message__text {
     margin-bottom: 20px;
+    user-select: none;
 
     span {
       margin-left: $mainOffset;
