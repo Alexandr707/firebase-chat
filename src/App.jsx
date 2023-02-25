@@ -15,6 +15,7 @@ import { getColorSchema } from "./utils/getColorSchema";
 
 function App() {
   useEffect(() => {
+    setColorSchema(getColorSchema(), false);
     document.addEventListener(
       "storage",
       () => {
