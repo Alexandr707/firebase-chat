@@ -121,23 +121,25 @@
       stroke: $primaryColor;
       fill: $primaryColor;
     }
+  }
+  .message__delete,
+  .message__edit {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .message__dots {
+    pointer-events: all;
+  }
 
+  .edit {
+    .message__dots {
+      opacity: 0;
+      pointer-events: none;
+    }
     .message__delete,
     .message__edit {
-      opacity: 0;
-    }
-    .message__dots.msgEditIcon {
-      // top: 10px;
-    }
-
-    &:hover {
-      .message__dots {
-        opacity: 0;
-      }
-      .message__delete,
-      .message__edit {
-        opacity: 1;
-      }
+      opacity: 1;
+      pointer-events: all;
     }
   }
 

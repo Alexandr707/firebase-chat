@@ -40,7 +40,7 @@ function Message({ msg }) {
         </div>
         <div className="message__time">{time}</div>
         <CanEditMsg msg={msg}>
-          <div className="message__icons">
+          <div className={clsx("message__icons", editOpen && "edit")}>
             <div
               className="message__dots msgEditIcon"
               onClick={() => setEditOpen(true)}
