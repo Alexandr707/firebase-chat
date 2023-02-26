@@ -65,7 +65,7 @@ function Login() {
             },
             minLength: {
               value: 6,
-              message: "Password length must be more than 6 characters",
+              message: "Password length must be more then 6 characters",
             },
           })}
         />

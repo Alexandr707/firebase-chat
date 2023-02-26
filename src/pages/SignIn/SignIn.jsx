@@ -46,7 +46,7 @@ function SignIn() {
             required: true,
             minLength: {
               value: 3,
-              message: "nickname length must be more than 3 characters",
+              message: "nickname length must be more then 3 characters",
             },
           })}
         />
