@@ -14,6 +14,9 @@ export function getColorSchema() {
   const warningColor = getComputedStyle(document.documentElement)
     .getPropertyValue("--warningColor")
     .trim();
+  const textColor = getComputedStyle(document.documentElement)
+    .getPropertyValue("--warningColor")
+    .trim();
 
-  return { primaryColor, secondaryColor, bgColor, warningColor };
+  return { primaryColor, secondaryColor, bgColor, warningColor, textColor };
 }

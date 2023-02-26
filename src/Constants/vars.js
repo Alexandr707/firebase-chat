@@ -7,6 +7,7 @@ const vars = {
     primaryColor: "#9f4f68",
     secondaryColor: "#008080",
     warningColor: "#ff0000",
+    textColor: "#fff",
   },
 };
 
