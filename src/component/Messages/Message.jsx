@@ -14,6 +14,7 @@ function Message({ msg }) {
   const time = new Date(timestamp).toLocaleString();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isUpdate, setIsUpdate] = useState(false);
+  const [editOpen, setEditOpen] = useState(false);
 
   function deleteMessage() {
     if (isModalVisible) {
@@ -40,23 +41,34 @@ function Message({ msg }) {
         <div className="message__time">{time}</div>
         <CanEditMsg msg={msg}>
           <div className="message__icons">
-            <div className="message__dots msgEditIcon">
+            <div
+              className="message__dots msgEditIcon"
+              onClick={() => setEditOpen(true)}
+            >
               <DotsIcon />
             </div>
-            <div className="message__editBtns">
-              <div
-                className="message__delete msgEditIcon"
-                onClick={() => setIsModalVisible(true)}
-              >
-                <DeleteIcon />
+            {editOpen && (
+              <div className="message__editBtns">
+                <div
+                  className="message__delete msgEditIcon"
+                  onClick={() => {
+                    setEditOpen(false);
+                    setIsModalVisible(true);
+                  }}
+                >
+                  <DeleteIcon />
+                </div>
+                <div
+                  className="message__edit msgEditIcon"
+                  onClick={() => {
+                    setEditOpen(false);
+                    setIsUpdate(true);
+                  }}
+                >
+                  <EditIcon />
+                </div>
               </div>
-              <div
-                className="message__edit msgEditIcon"
-                onClick={() => setIsUpdate(true)}
-              >
-                <EditIcon />
-              </div>
-            </div>
+            )}
           </div>
         </CanEditMsg>
         {isModalVisible && (

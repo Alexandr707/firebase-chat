@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useKeyPress } from "../../hooks/useKeyPres";
 import Button from "../Button/Button";
+import { CloseIcon } from "../Icons";
 import Input from "../Input/Input";
 import SelectComponent from "../SelectModers/SelectModers";
 import "./NewChatModal.scss";
@@ -79,7 +80,7 @@ function NewChatModal({
       <div className="chatModall__backplate" />
       <div className="chatModal__wrapp">
         <div className="chatModal__close" onClick={close}>
-          X
+          <CloseIcon />
         </div>
         <div className="chatmodal__input">
           <label htmlFor="chat name">Name: </label>
