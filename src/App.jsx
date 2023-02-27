@@ -15,6 +15,19 @@ import { getColorSchema } from "./utils/getColorSchema";
 
 function App() {
   useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--vh",
+      window.innerHeight * 0.01 + "px"
+    );
+    window.addEventListener("resize", () => {
+      document.documentElement.style.setProperty(
+        "--vh",
+        window.innerHeight * 0.01 + "px"
+      );
+    });
+  }, []);
+
+  useEffect(() => {
     setColorSchema(getColorSchema(), false);
     document.addEventListener(
       "storage",

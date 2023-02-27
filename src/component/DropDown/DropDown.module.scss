@@ -6,7 +6,7 @@
   left: 0;
   top: 0;
   width: 100vw;
-  height: 100vh;
+  height: calc($vh * 100);
   background-color: $bgColor;
   transform: translateY(-150%);
   transition: transform 0.3s;

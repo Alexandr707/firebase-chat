@@ -3,7 +3,7 @@
 .mainPage {
   color: $textColor;
   background-color: $bgColor;
-  height: 100vh;
+  height: calc($vh * 100);
   padding: $mainOffset;
 
   .main__wrapp {
@@ -38,7 +38,7 @@
       left: 0;
       top: 0;
       width: 100vw;
-      height: 100vh;
+      height: calc($vh * 100);
       transform: translateY(-150%);
       transition: transform 0.3s;
 
