@@ -2,12 +2,13 @@ import NewChatModal from "../NewChatModal/NewChatModal";
 import { setCurrentChat } from "../../redux/store";
 import { chats as fbChats } from "../../firebase";
 import ChatItem from "../ChatItem/ChatItem";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import "./ChatsList.scss";
 
 function ChatsList() {
   const { list: chats, currentChat } = useSelector((state) => state.chats);
+  const dispatch = useDispatch();
   const [isModal, setIsModal] = useState(false);
 
   useEffect(() => {
