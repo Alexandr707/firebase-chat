@@ -3,7 +3,7 @@ import { setCurrentChat } from "../../redux/store";
 import { chats as fbChats } from "../../firebase";
 import ChatItem from "../ChatItem/ChatItem";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./ChatsList.scss";
 
 function ChatsList() {
