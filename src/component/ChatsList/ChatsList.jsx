@@ -17,7 +17,7 @@ function ChatsList() {
       currentChat &&
       !chats.filter((c) => c.cid === currentChat.cid).length
     ) {
-      dispatch(setCurrentChat(chatData));
+      dispatch(setCurrentChat(null));
     }
   }, [chats]);
 
