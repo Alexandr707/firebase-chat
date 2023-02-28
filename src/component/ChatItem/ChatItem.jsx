@@ -59,6 +59,7 @@ function ChatItem({ chatData }) {
           close={() => setIsConfirm(false)}
           submit={() => {
             chats.deleteChat(chatData.cid);
+            dispatch(setCurrentChat(null));
             setIsConfirm(false);
           }}
         >
